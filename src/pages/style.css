@@ -1,0 +1,40 @@
+
+/* Home Page */
+.brdr-right{
+    border-right: 1px solid #ddd;
+}
+
+/* Home Page Hero Section Column */
+.hero_column{
+    margin-top: 175px !important;
+}
+
+.contact_img{
+    background-image: url('./contact_header_bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 70vh;
+}
+.contact-header_text{
+    margin-top: 125px;
+    position: absolute;
+    right: 75px;
+}
+
+@media screen and (max-width: 768px) {
+    /* Home Page Hero Section Column */
+    .hero_column{
+        margin-top: 175px !important;
+    }
+    .contact-header_text{
+        margin-top: 125px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    /* Home Page... */
+    .brdr-right{
+        border-right: none;
+    }
+}
