@@ -34,12 +34,12 @@ const App = () => {
   //   // to resport page view
   //   ReactGa.pageview(window.location.pathname + window.location.search)
   // }, [])
-  
+
   useEffect(() => {
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
-    }, 580)
+    }, 600)
 
   }, [])
 
@@ -54,12 +54,13 @@ const App = () => {
           <Navbar />
           <Routes>
             <Route path="/" exact element={<Home />} />
-            <Route path="/shop" element={<Shop />} />
+
             <Route path="/login" element={<Login />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/register" element={<Register />} />
             <Route path="/viewcart" element={<ViewCart />} />
+            <Route path="/shop" element={<Shop />} />
             <Route path="/success" element={<OrderSuccess />} />
             <Route path="/product/:id" element={<ProductDetails />} />
 

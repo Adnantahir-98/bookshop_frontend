@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { publicRequest } from '../requestMethods'
 import { addProduct } from "../redux/cartSlice"
 import { useDispatch } from "react-redux"
@@ -17,7 +17,7 @@ const ProductDetails = () => {
     const [size, setSize] = useState("")
 
     const dispatch = useDispatch()
-
+    const navigate = useNavigate()
     const location = useLocation()
     const id = location.pathname.split("/")[2]
 
@@ -45,6 +45,9 @@ const ProductDetails = () => {
         dispatch(
             addProduct({ ...product, quantity, color, size })
         )
+        setTimeout(() => {
+            navigate('/viewcart')
+        }, 700)
     }
 
     return (
@@ -56,7 +59,7 @@ const ProductDetails = () => {
                 <Col md={6}>
                     <Card className="border-0">
                         <Card.Body>
-                            <Card.Subtitle className="mb-2 text-muted font-monospace">Category</Card.Subtitle>
+                            <Card.Subtitle className="mb-2 text-muted font-monospace">Paper Product</Card.Subtitle>
                             <Card.Title>
                                 <h1 className="fw-bold mt-0 pt-0">{product.title}</h1>
                             </Card.Title>
@@ -67,20 +70,21 @@ const ProductDetails = () => {
 
                             <h3 className="fw-bolder"> ${product.price}</h3>
 
-                            <div className="d-flex my-2">
-                                <h5 className="me-3 mt-1">Size: </h5>
-                                <select className="form-select w-25">
-                                    {product.size?.map((s) => (
-                                        <option key={s}>{s}</option>
-                                    ))}
-                                </select>
-                            </div>
+
                             <FilterContainer>
                                 <Filter>
                                     <h5>Color: </h5>
                                     {product.color?.map((c) => (
                                         <FilterColor color={c} key={c} onClick={() => setColor(c)} />
                                     ))}
+                                </Filter>
+                                <Filter className="ms-4">
+                                    <FilterSize onChange={(e) => setSize(e.target.value)}>
+                                        <FilterSizeOption disabled selected>Select Size</FilterSizeOption>
+                                        {product.size?.map((s) => (
+                                            <FilterSizeOption key={s}>{s}</FilterSizeOption>
+                                        ))}
+                                    </FilterSize>
                                 </Filter>
                             </FilterContainer>
                             <div className="d-flex">
@@ -91,7 +95,7 @@ const ProductDetails = () => {
                             </div>
                             <div className="d-flex">
                                 <h5 className="me-3">Stock: </h5>
-                                <h6 className={product.inStock > 0 ? 'text-dark mt-1' : 'text-danger mt-1'}>"{product.inStock > 0 ? 'Stock Available' : 'Out of Stock'}"</h6>
+                                <h6 className={product.inStock > 0 ? 'text-dark mt-1' : 'text-danger mt-1'}>"{product.inStock > 0 ? 'Available' : 'Out of Stock'}"</h6>
                             </div>
 
                             <Button
@@ -122,6 +126,11 @@ const Filter = styled.div`
   align-items: center;
 `;
 
+// const FilterTitle = styled.span`
+//   font-size: 20px;
+//   font-weight: 600;
+// `;
+
 const FilterColor = styled.div`
   width: 20px;
   height: 20px;
@@ -129,4 +138,13 @@ const FilterColor = styled.div`
   background-color: ${(props) => props.color};
   margin: 0px 5px;
   cursor: pointer;
+
 `;
+
+const FilterSize = styled.select`
+  margin-left: 12px;
+  padding: 3px 5px 3px 5px;
+`;
+
+const FilterSizeOption = styled.option``;
+

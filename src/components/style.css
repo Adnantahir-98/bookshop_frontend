@@ -10,4 +10,7 @@
     nav{
         background: rgba(55, 55, 55, 0.815) !important;
     }
+    footer{
+        text-align: center;
+    }
 }

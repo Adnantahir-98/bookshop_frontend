@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 // import emailjs from '@emailjs/browser'
 import {Alert} from 'react-bootstrap'
 import { BsEnvelopeFill, BsFillTelephoneFill } from 'react-icons/bs'
+import {ImMobile} from 'react-icons/im'
 import './style.css'
 
 
@@ -63,11 +64,12 @@ const Contact = () => {
                     <div className="col-md-6">
                         <h5 className="fw-bold mb-3">Ask how we can help you:</h5>
                         <h6 className="fw-bold">Information & sales</h6>
-                        <span><BsEnvelopeFill className='text-primary' /> marketing@bookshop.com</span>
-                        <p><BsFillTelephoneFill className='text-primary' /> +92309-0144943</p>
+                        <span><BsEnvelopeFill className='text-primary' /> info@bookshop.com.pk</span>
+                        <p className='mb-0'><ImMobile className='text-primary' /> +92309-0144943</p>
+                        <p className='mb-3'><BsFillTelephoneFill className='text-primary' /> +92423-7120108</p>
 
                         <h6 className="fw-bold">Support</h6>
-                        <span><BsEnvelopeFill className='text-primary' /> info@bookshop.com.pk</span>
+                        <span><BsEnvelopeFill className='text-dark' /> support@bookshop.com.pk</span>
 
                         <h5 className="fw-bold my-3"> Office Location </h5>
                         <h3 className="fw-light">Pakistan:</h3>

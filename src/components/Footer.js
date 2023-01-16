@@ -5,6 +5,7 @@ import {
     FaYoutube
 } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import './style.css'
 
 
 const Footer = () => {
@@ -51,7 +52,7 @@ const Footer = () => {
                                         <li className="nav-item"><Link to="/" className="text-muted">Subject NoteBooks</Link></li>
                                         <li className="nav-item"><Link to="#" className="text-muted">Shopping Bags</Link></li>
                                         <li className="nav-item"><Link to="/" className="text-muted">Spiral Registers</Link></li>
-                                        <li className="nav-item"><Link to="/" className="text-muted">Colouring Books</Link></li>
+                                        <li className="nav-item"><Link to="/" className="text-muted">Coloring Books</Link></li>
                                         <li className="nav-item"><Link to="/" className="text-muted">Learning Books</Link></li>
                                         <li className="nav-item"><Link to="/" className="text-muted">Chart/Glaze Paper</Link></li>
                                     </ul>
@@ -71,7 +72,7 @@ const Footer = () => {
 
                                 <div className="payment-method-footer-imgs text-center m-auto pb-5 pt-5">
                                     <img src="imgs/footer/MasterCard.png" alt="MasterCard.png" className="img-fluid" style={{ height: "60px", width: "100px" }} />
-                                    <img src="imgs/footer/stripe.png" alt="stripe.png" className="img-fluid ms-3" style={{ height: "60px", width: "100px" }} />
+                                    <img src="imgs/footer/stripe.png" alt="stripe.png" className="img-fluid ms-3 rounded" style={{ height: "60px", width: "100px" }} />
                                     <img src="imgs/footer/Visa.png" alt="Visa.png" className="img-fluid ms-3" style={{ height: "60px", width: "100px" }} />
                                 </div>
                                 <br />
