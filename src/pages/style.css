@@ -22,6 +22,7 @@
     right: 75px;
 }
 
+
 @media screen and (max-width: 768px) {
     /* Home Page Hero Section Column */
     .hero_column{
@@ -29,6 +30,9 @@
     }
     .contact-header_text{
         margin-top: 125px;
+    }
+    .product-img_dsply{
+        display: none;
     }
 }
 

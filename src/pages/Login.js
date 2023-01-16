@@ -37,6 +37,7 @@ const Login = () => {
                   <Form.Label>Password</Form.Label>
                   <Form.Control type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
                 </Form.Group>
+                {error && <span className="text-danger">Someting Went Wrong</span>}
                 <Button variant="primary" type="submit" onClick={handleClick} disabled={isFetching}>
                   Sign In
                 </Button>

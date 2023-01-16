@@ -49,7 +49,11 @@ const NavbarMenu = () => {
                             </div>
                         </Fade>
                         <Nav className="ms-auto">
-                            <Nav.Link><Link to="/shop" className='text-decoration-none text-muted'>Shop</Link></Nav.Link>
+                            <Nav.Link>
+                                <Link to="/shop/" className='text-decoration-none text-muted'>
+                                    Shop
+                                </Link>
+                            </Nav.Link>
 
                             <NavDropdown title="English" id="basic-nav-dropdown">
                                 <NavDropdown.Item>Urdu</NavDropdown.Item>

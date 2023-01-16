@@ -67,23 +67,23 @@ const Home = ({ cat, filters, sort }) => {
   return (
     <>
       <section>
-        {/* Hero Section Will Go here */}
+        {/* Hero Section Home Page Header */}
         <Container fluid>
           <Row style={{ backgroundImage: "url(imgs/hero_section_bg.jpg)", height: "100vh", backgroundPosition: "center", backgroundSize: "cover" }}>
             <Col md={6} className="hero_column text-white">
               <Fade left>
                 <h6 className="text-muted py-0 my-0">Indus Publishing House</h6>
-                <h2 className="fw-bold text-white">Conquer Your Creativity With Our Quality Paper Products</h2>
+                <h2 className="fw-bold text-white">Conquer Your Creativity With Our Fine Quality Paper Products</h2>
                 <p>
                   We offer Exercise Notebook, Registers, Spiral Notebooks, Sketch Books, Scrap Books, File Covers, Writing Pads,
                   PreSchool Books, Story Books, Puzzle Books, Planners, Writing Books, Coloring Books, Account Books, Graph Books, Diaries, Answer Sheets,
-                  Chart Paper, Color Paper, Glaze Paper, Gift Bags, Gift Boxes, Gift Wrapping Sheets, Evelops and many more.
+                  Chart Paper, Color Paper, Glaze Paper, Gift Bags, Gift Boxes, Gift Wrapping Sheets, Evelops and many more...
                 </p>
                 <Link to="/shop" className="text-decoration-none btn btn-outline-danger">Shop Now</Link>
               </Fade>
             </Col>
-            <Col md={6} className="">
-              {/* <img src="imgs/hero_section.png" alt="" className="img-fluid" style={{height: "90vh"}} /> */}
+            <Col md={6}>
+              {/* Nothing Here Right Now, We can use Column Off-set too*/}
             </Col>
           </Row>
         </Container>
@@ -95,7 +95,7 @@ const Home = ({ cat, filters, sort }) => {
         <HeadShake>
           <Container className='rounded-3 mt-5'>
             <img src="imgs/pad_bg.jpg" className="rounded-3 img-fluid mt-5" />
-            <small className="text-white" style={{position: 'absolute', right: "85px", bottom: "3px"}}>Indus Publishing House</small>
+            <small className="text-white" style={{ position: 'absolute', right: "85px", bottom: "3px" }}>Indus Publishing House</small>
           </Container>
         </HeadShake>
       </section>
@@ -153,36 +153,61 @@ const Home = ({ cat, filters, sort }) => {
       </section>
 
 
-      <Container>
-        <Fade bottom>
-          <Row>
-            <h3 className='mt-5 text-center'>Our Latest Products</h3>
-            <p className='text-center w-75' style={{ margin: "auto" }}>
-              NoteBooks and Registers you can buy for the educational or office purposes! Experience fine quality &
-              with an overwelmingly customer support from our team. The perfect publishing house awaits for you.
-            </p>
-            {cat
-              ? filteredProducts.slice(0, show).map((item) => <Product item={item} show={show} setShow={setShow} key={item.id} />)
-              : products
-                .slice(0, show)
-                .map((item) => <Product item={item} key={item.id} />)}
-          </Row>
-        </Fade>
+      <section>
+        <Container>
+          <Fade bottom>
+            <Row>
+              <h3 className='mt-5 text-center'>Our Latest Products</h3>
+              <p className='text-center w-75' style={{ margin: "auto" }}>
+                NoteBooks and Registers you can buy for the educational or office purposes! Experience fine quality &
+                with an overwelmingly customer support from our team. The perfect book shop awaits for you.
+              </p>
+              {cat
+                ? filteredProducts
+                    .slice(0, show)
+                    .map((item) => <Product item={item} show={show} setShow={setShow} key={item._id} />)
+                : products
+                    .slice(0, show)
+                    .map((items) => <Product item={items} key={items._id} />)}
+            </Row>
+          </Fade>
 
-        <button className="btn btn-outline-dark d-block m-auto" onClick={loadMore}>
-          Load More
-          <AiOutlineArrowDown className="mx-2" />
-        </button>
-      </Container>
+          <button className="btn btn-outline-danger d-block m-auto" onClick={loadMore}>
+            Load More
+            <AiOutlineArrowDown className="mx-2" />
+          </button>
+        </Container>
+
+      </section>
 
 
       <section>
         <Container className="mt-5">
-          <Row>
-            <Fade bottom>
+          <Fade bottom>
+            <Row className="text-center">
               <h2 className="text-center">Our Partners</h2>
-            </Fade>
-          </Row>
+              <Col md={3}>
+                <Fade top>
+                  <img src="imgs/ourpartners/beaconhouse_school.png" alt="beaconhouse_school.png" className="img-fluid rounded-circle shadow mt-3" style={{ height: "225px" }} />
+                </Fade>
+              </Col>
+              <Col md={3}>
+                <Fade bottom>
+                  <img src="imgs/ourpartners/carrfour_store.png" alt="carrfour_store.png" className="img-fluid rounded-circle shadow mt-3" style={{ height: "225px" }} />
+                </Fade>
+              </Col>
+              <Col md={3}>
+                <Fade top>
+                  <img src="imgs/ourpartners/csd_store.png" alt="csd_store.png" className="img-fluid rounded-circle shadow mt-3" style={{ height: "225px" }} />
+                </Fade>
+              </Col>
+              <Col md={3}>
+                <Fade bottom>
+                  <img src="imgs/ourpartners/metro_store.png" alt="metro_store.png" className="img-fluid rounded-circle shadow mt-3" style={{ height: "225px" }} />
+                </Fade>
+              </Col>
+            </Row>
+          </Fade>
         </Container>
       </section>
 
