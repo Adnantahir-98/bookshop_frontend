@@ -7,6 +7,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 <br><br />
 ![](Screenshot2.png)
 <br><br />
+![](Screenshot3.png)
+<br><br />
 
 ## Available Scripts
 
