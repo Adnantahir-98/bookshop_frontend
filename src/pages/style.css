@@ -9,8 +9,15 @@
     margin-top: 175px !important;
 }
 
+.about_img{
+    background-image: url('../assets/images/about_header.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 65vh;
+}
 .contact_img{
-    background-image: url('./contact_header_bg.jpg');
+    background-image: url('../assets/images/contact_header_bg.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 
 import { Link, useNavigate } from "react-router-dom"
 import { useSelector, useDispatch } from 'react-redux'
-import { removeProduct } from "../redux/cartSlice"
+import { removeProduct, clearCart } from "../redux/cartSlice"
 import StripeCheckout from 'react-stripe-checkout'
 import { userRequest } from "../requestMethods"
 
@@ -72,7 +72,9 @@ const ViewCart = ({ _id }) => {
                                                     <h2>Billing & Shipping</h2>
                                                     <p className="mb-0">You have ({cart.quantity}) items in your cart</p>
                                                 </div>
-
+                                                <div>
+                                                    <p className="mb-0 btn btn-outline-danger btn-sm" onClick={() => dispatch(clearCart())}>Clear Cart</p>
+                                                </div>
                                             </div>
                                             {cart.products.map((product) => (
                                                 <div className="card border-0 border-bottom mb-3" key={product._id}>
@@ -91,7 +93,7 @@ const ViewCart = ({ _id }) => {
                                                             <div className="col-md-6 d-flex">
 
                                                                 <h5 className="py-0 my-0 rounded text-center mt-2">{product.quantity}</h5>
-                                                                
+
                                                                 {/* <ProductAmountContainer>
                                                                     <AiOutlineMinus className="ms-auto me-2 mt-1" />
                                                                     <ProductAmount

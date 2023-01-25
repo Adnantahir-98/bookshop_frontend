@@ -62,11 +62,11 @@ const Footer = () => {
                                     <h6 className="font-weight-bold mb-3">About us</h6>
                                     <ul className="navbar-nav">
                                         <li className="nav-item"><Link to="/about" className="text-muted">About us</Link></li>
+                                        <li className="nav-item"><Link to="/contact" className="text-muted">Contact us</Link></li>
                                         <li className="nav-item"><Link to="/" className="text-muted">Our Factory</Link></li>
-                                        <li className="nav-item"><Link to="/" className="text-muted">Pdf Brochure</Link></li>
+                                        <li className="nav-item"><a href="#!" className="text-muted">Pdf Brochure</a></li>
                                         <li className="nav-item"><Link to="/shop" className="text-muted">Products Shop</Link></li>
                                         <li className="nav-item"><Link to="/" className="text-muted">Cash on Delivery</Link></li>
-                                        <li className="nav-item"><Link to="/contact" className="text-muted">Contact us</Link></li>
                                     </ul>
                                 </div>
 
