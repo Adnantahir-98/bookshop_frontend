@@ -30,6 +30,9 @@ const Register = () => {
                                 <Button className='mb-3' variant="primary" type="submit">
                                     Sign Up
                                 </Button>
+                                {/* <button type='submit' className='button' disabled={loading}>
+                                    {loading ? <Spinner /> : 'Sign Up'}
+                                </button> */}
                             </Form>
                         </Card>
                         <p className='text-left mt-2'>Already have an account? <Link to="/login">Login</Link></p>

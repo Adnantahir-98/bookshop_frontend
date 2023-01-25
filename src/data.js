@@ -1,26 +1,3 @@
-export const sliderItems = [
-    {
-      id: 1,
-      img: "kdfs",
-      title: "SUMMER SALE",
-      desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-      bg: "f5fafd",
-    },
-    {
-      id: 2,
-      img: "https://i.ibb.co/DG69bQ4/2.png",
-      title: "AUTUMN COLLECTION",
-      desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-      bg: "fcf1ed",
-    },
-    {
-      id: 3,
-      img: "https://i.ibb.co/cXFnLLV/3.png",
-      title: "LOUNGEWEAR LOVE",
-      desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-      bg: "fbf0f4",
-    },
-];
 
 export const categories = [
     {
@@ -43,6 +20,7 @@ export const categories = [
     },
   ];
 
+  
   export const popularProducts = [
     {
       id:1,
@@ -77,3 +55,76 @@ export const categories = [
       img:"https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
     },
 ]
+
+
+export const imageGallery = [
+  {
+    img: 'https://images.unsplash.com/photo-1572273869941-45732d6f581c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80',
+    title: 'Fern',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1616674283121-33cbf474a94e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+    title: 'Snacks',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1600431521340-491eca880813?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80',
+    title: 'Mushrooms',
+  },
+  {
+    img: 'https://plus.unsplash.com/premium_photo-1663852904574-541b79b78743?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=693&q=80',
+    title: 'Tower',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80',
+    title: 'Sea star',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1531347387918-af516d1e939c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+    title: 'Honey',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1531346644014-cde582069e71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+    title: 'Basketball',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1601001435957-74f0958a93fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
+    title: 'Breakfast',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1620275765334-4ed948bb4502?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+    title: 'Tree',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1531346680769-a1d79b57de5c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+    title: 'Burger',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1617975178139-4b9f9260a5f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80',
+    title: 'Camera',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1624627279963-1831ffa3d170?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
+    title: 'Coffee',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1631173716529-fd1696a807b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1112&q=80',
+    title: 'Camping Car',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+    title: 'Hats',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1612599316791-451087c7fe15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1124&q=80',
+    title: 'Tomato basil',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1623697899811-f2403f50685e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=703&q=80',
+    title: 'Mountain',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1620811449164-f12a0f2ac40f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80',
+    title: 'Bike',
+  },
+];
+

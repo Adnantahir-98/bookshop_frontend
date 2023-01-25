@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-// import emailjs from '@emailjs/browser'
+import emailjs from '@emailjs/browser'
 import {Alert} from 'react-bootstrap'
 import { BsEnvelopeFill, BsFillTelephoneFill } from 'react-icons/bs'
 import {ImMobile} from 'react-icons/im'
@@ -34,18 +34,18 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // emailjs.send('service_fpxjwdp', 'template_8v9i7xn', values, 'hmdtKFt_k4Ew3iGSX')
-        //     .then(response => {
-        //         console.log('Success', response)
-        //         setValues({
-        //             fullName: '',
-        //             email: '',
-        //             message: ''
-        //         })
-        //         setStatus('SUCCESS')
-        //     }, error => {
-        //         console.log("Failed...", error)
-        //     })
+        emailjs.send('service_fsfwkwi', 'template_u62f8th', values, 'hmdtKFt_k4Ew3iGSX')
+            .then(response => {
+                console.log('Success', response)
+                setValues({
+                    fullName: '',
+                    email: '',
+                    message: ''
+                })
+                setStatus('SUCCESS')
+            }, error => {
+                console.log("Failed...", error)
+            })
     }
 
     return (
@@ -64,7 +64,12 @@ const Contact = () => {
                     <div className="col-md-6">
                         <h5 className="fw-bold mb-3">Ask how we can help you:</h5>
                         <h6 className="fw-bold">Information & sales</h6>
-                        <span><BsEnvelopeFill className='text-primary' /> info@bookshop.com.pk</span>
+                        <span>
+                            <BsEnvelopeFill className='text-primary' />
+                            <a href="mailto:info@bookshop.com.pk" type="email" className="text-white text-decoration-none"> 
+                                info@bookshop.com.pk
+                            </a>
+                        </span>
                         <p className='mb-0'><ImMobile className='text-primary' /> +92309-0144943</p>
                         <p className='mb-3'><BsFillTelephoneFill className='text-primary' /> +92423-7120108</p>
 

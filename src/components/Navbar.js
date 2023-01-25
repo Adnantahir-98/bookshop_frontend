@@ -1,11 +1,15 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { useSelector } from "react-redux";
+
+import { Link, useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from "react-redux"
+import {logoutSuccess} from '../redux/userSlice'
+
 // import SearchBox from './SearchBox'
-import { Navbar, NavDropdown, Nav, Container } from 'react-bootstrap'
+import { Navbar, NavDropdown, Nav, Container, Row, Col } from 'react-bootstrap'
 import { AiOutlineShoppingCart, AiOutlineSearch } from 'react-icons/ai'
+import { BsEnvelopeFill } from 'react-icons/bs'
+import { GiRotaryPhone } from 'react-icons/gi'
 import { BiUserCircle } from 'react-icons/bi'
-// import { GoGlobe } from 'react-icons/go'
+import { GoGlobe } from 'react-icons/go'
 import Bounce from 'react-reveal/Bounce'
 import Fade from 'react-reveal/Fade'
 import './style.css'
@@ -16,6 +20,15 @@ const NavbarMenu = () => {
     // const [navbar, setNavbar] = useState(false)
 
     const quantity = useSelector(state => state.cart.quantity)
+    const { currentUser } = useSelector((state) => state.user);
+    const history = useNavigate()
+    const dispatch = useDispatch()
+
+    const logoutHandler = () => {
+        dispatch(logoutSuccess())
+        history('/login')
+    }
+
 
     // const changeBackground = () => {
     //     if (window.scrollY >= 50) {
@@ -29,6 +42,34 @@ const NavbarMenu = () => {
 
     return (
         <>
+            <Fade top>
+                <div className="top-bar bg-danger">
+                    <Container fluid>
+                        <Row>
+                            <Col md={3} className="mt-1">
+                                <div className='d-flex'>
+                                    <BsEnvelopeFill className='text-white mt-1 text-start me-1' />
+                                    <a href="mailto:info@bookshop.com.pk" type="email" className="text-white text-decoration-none">
+                                        info@bookshop.com.pk
+                                    </a>
+                                </div>
+                            </Col>
+
+                            <Col md={6} className="mt-1">
+                                <h6 className='text-center text-white'>See Our Exclusive Discount Offers:<Link to="/shop" className='text-white ms-1'>Show Now</Link></h6>
+                            </Col>
+                            <Col md={3} className="mt-1 text-end">
+                                <GiRotaryPhone className='me-1 text-white' />
+                                <a href="tel:+924237120108" type="phone" className="text-white text-decoration-none">
+                                    +92423-7120108
+                                </a>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
+            </Fade>
+
+
             <Navbar bg="light" variant="light" expand="lg">
                 <Container fluid>
                     <Navbar.Brand>
@@ -50,22 +91,47 @@ const NavbarMenu = () => {
                         </Fade>
                         <Nav className="ms-auto">
                             <Nav.Link>
-                                <Link to="/shop/" className='text-decoration-none text-muted'>
+                                <Link to="/shop" className='text-decoration-none text-muted'>
                                     Shop
                                 </Link>
                             </Nav.Link>
 
-                            <NavDropdown title="English" id="basic-nav-dropdown">
-                                <NavDropdown.Item>Urdu</NavDropdown.Item>
-                                <NavDropdown.Item>Arabic</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Spanish</NavDropdown.Item>
+                            <NavDropdown title={<GoGlobe />} id="basic-nav-dropdown">
+                                <NavDropdown.Item>española</NavDropdown.Item>
+                                <NavDropdown.Item disabled>française</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.3">italiano</NavDropdown.Item>
                             </NavDropdown>
-                            <Nav.Link>
-                                <Link to="/login" className='text-decoration-none text-muted'>
-                                    <BiUserCircle className='me-1' />
-                                    Login & Register
-                                </Link>
-                            </Nav.Link>
+
+                            {currentUser ? (
+                                <NavDropdown title={currentUser.username} id="basic-nav-dropdown">
+                                    <NavDropdown.Item onClick={logoutHandler}>
+                                        Logout
+                                    </NavDropdown.Item>
+                                </NavDropdown>
+                            ) : (
+
+                                <Nav.Link>
+                                    <Link to="/login" className='text-decoration-none text-muted'>
+                                        <BiUserCircle className='me-1' />
+                                        Login & Register
+                                    </Link>
+                                </Nav.Link>
+                            )}
+                            {currentUser && currentUser.isAdmin && (
+                                <NavDropdown title="History" id="basic-nav-dropdown">
+                                    <NavDropdown.Item>
+                                        <Link to="/productslist" className='text-decoration-none'>
+                                            Products List
+                                        </Link>
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item>
+                                        <Link to="/orderslist" className='text-decoration-none'>
+                                            Orders List
+                                        </Link>
+                                    </NavDropdown.Item>
+                                </NavDropdown>
+                            )}
+
                         </Nav>
                         <Nav.Link className='nav-item mx-1' style={{ fontSize: "25px" }}>
                             <Link to="/viewcart" className='text-decoration-none'>
@@ -79,7 +145,7 @@ const NavbarMenu = () => {
                         </Nav.Link>
                     </Navbar.Collapse>
                 </Container>
-            </Navbar>
+            </Navbar >
 
 
             {/* <nav className={navbar ? 'navbar fixed-top navbar-expand-lg navbar-dark p-md-2 mb-3 scrollBg' : 'navbar fixed-top navbar-expand-lg navbar-dark p-md-2 mb-3'}>

@@ -1,13 +1,13 @@
 import './style.css'
-import {Container, Row, Col, Card} from 'react-bootstrap'
-import {FaWhatsapp} from 'react-icons/fa'
+import { Container, Row, Col, Card } from 'react-bootstrap'
+import { FaWhatsapp } from 'react-icons/fa'
 
 
 const About = () => {
   return (
     <div>
-      <header className='about_header'>
-        <div className="container overlay_img img-fluid">
+      <header className='about_img'>
+        <div className="container img-fluid">
         </div>
       </header>
 
@@ -21,14 +21,19 @@ const About = () => {
           </Col>
         </Row>
 
-        <h1 className='text-center mt-5 mb-3'>Our mission is to inspire and unlock creativity with liberating technology.</h1>
+        <h1 className='text-center mt-5 mb-3'>Our mission is to inspire and unlock creativity with liberating Innovation.</h1>
         <Row>
           <Col md={6} className='mt-5 pt-3'>
             <h1>We're growing!</h1>
             <p>Book Shop is currently hiring for a number of key roles across various departments. Check our current listings to see if one of them is right for you.
               Book Shop is deeply committed to uniting exceptional people of all backgrounds in our shared passion to inspire and empower the creative potential of our 850+ clients.
             </p>
-            <a href="https://wa.me/923090144943?text=urlencodedtext" rel="noreferrer" target="_blank"><button className='btn btn-outline-primary'><FaWhatsapp /> Connect!</button></a>
+            <a href="https://wa.me/923061406329" target="_blank">
+              <button className='btn btn-outline-primary'>
+                <FaWhatsapp />
+                Connect!
+              </button>
+            </a>
           </Col>
           <Col md={6}>
             <img src="imgs/about/connected_world.png" className='img-fluid' alt="Grow business with Book Shop" />
@@ -41,8 +46,8 @@ const About = () => {
           <p className="text-center m-auto w-75 pb-4">At Book Shop we are committed to your growth, professionally and personally. That's why we've created initiatives and programs designed to help you reach your potential.</p>
           <Row className='m-auto'>
             <Col md={3}>
-            <Card className='text-center my-1 border-0' style={{ width: '18rem' }}>
-              <Card.Img variant="top" src="imgs/about/Connecting_Team.png" alt="Book Shop Connect" className='img-fluid m-auto w-25' />
+              <Card className='text-center my-1 border-0' style={{ width: '18rem' }}>
+                <Card.Img variant="top" src="imgs/about/Connecting_Team.png" alt="Book Shop Connect" className='img-fluid m-auto w-25' />
                 <Card.Body>
                   <Card.Title>Connect</Card.Title>
                   <Card.Text>
@@ -52,8 +57,8 @@ const About = () => {
               </Card>
             </Col>
             <Col md={3}>
-            <Card className='text-center my-1 border-0' style={{ width: '18rem' }}>
-              <Card.Img variant="top" src="imgs/about/real_time_collaborate.png" alt="Book Shop Business Unity" className='img-fluid m-auto w-25' />
+              <Card className='text-center my-1 border-0' style={{ width: '18rem' }}>
+                <Card.Img variant="top" src="imgs/about/real_time_collaborate.png" alt="Book Shop Business Unity" className='img-fluid m-auto w-25' />
                 <Card.Body>
                   <Card.Title>Unity</Card.Title>
                   <Card.Text>
@@ -63,8 +68,8 @@ const About = () => {
               </Card>
             </Col>
             <Col md={3}>
-            <Card className='text-center my-1 border-0' style={{ width: '18rem' }}>
-              <Card.Img variant="top" src="imgs/about/Appreciation.png" alt="Potential Book Shop" className='img-fluid m-auto w-25' />
+              <Card className='text-center my-1 border-0' style={{ width: '18rem' }}>
+                <Card.Img variant="top" src="imgs/about/Appreciation.png" alt="Potential Book Shop" className='img-fluid m-auto w-25' />
                 <Card.Body>
                   <Card.Title>Potential</Card.Title>
                   <Card.Text>
@@ -74,8 +79,8 @@ const About = () => {
               </Card>
             </Col>
             <Col md={3}>
-            <Card className='text-center my-1 mb-5 border-0' style={{ width: '18rem' }}>
-              <Card.Img variant="top" src="imgs/about/Developer_activity.png" alt="24/7 availability Book Shop" className='img-fluid m-auto w-25' />
+              <Card className='text-center my-1 mb-5 border-0' style={{ width: '18rem' }}>
+                <Card.Img variant="top" src="imgs/about/Developer_activity.png" alt="24/7 availability Book Shop" className='img-fluid m-auto w-25' />
                 <Card.Body>
                   <Card.Title>Evolve 24/7</Card.Title>
                   <Card.Text>
@@ -91,8 +96,8 @@ const About = () => {
         <section>
           <Row className='m-auto pb-3'>
             <Col md={3}>
-            <Card className='text-center my-1' style={{ width: '17rem' }}>
-              <Card.Img variant="top" src="imgs/about/usman_majeed.png" alt="Book Shop Team" className='img-fluid py-5 m-auto' />
+              <Card className='text-center my-1' style={{ width: '17rem' }}>
+                <Card.Img variant="top" src="imgs/about/usman_majeed.png" alt="Book Shop Team" className='img-fluid py-5 m-auto' />
                 <Card.Body>
                   <Card.Title>Usman Majeed</Card.Title>
                   <Card.Text>
@@ -102,8 +107,8 @@ const About = () => {
               </Card>
             </Col>
             <Col md={3}>
-            <Card className='text-center my-1' style={{ width: '17rem' }}>
-              <Card.Img variant="top" src="imgs/about/male_avatar.png" alt="Book Shop Tech Team Kevin" className='img-fluid m-auto' />
+              <Card className='text-center my-1' style={{ width: '17rem' }}>
+                <Card.Img variant="top" src="imgs/about/male_avatar.png" alt="Book Shop Tech Team Kevin" className='img-fluid m-auto' />
                 <Card.Body>
                   <Card.Title>Charlie Cooper</Card.Title>
                   <Card.Text>
@@ -113,8 +118,8 @@ const About = () => {
               </Card>
             </Col>
             <Col md={3}>
-            <Card className='text-center my-1' style={{ width: '17rem' }}>
-              <Card.Img variant="top" src="imgs/about/My_documents.png" alt="Book Shop Women in Tech" className='img-fluid m-auto' />
+              <Card className='text-center my-1' style={{ width: '17rem' }}>
+                <Card.Img variant="top" src="imgs/about/My_documents.png" alt="Book Shop Women in Tech" className='img-fluid m-auto' />
                 <Card.Body>
                   <Card.Title>Elizabeth Sofia</Card.Title>
                   <Card.Text>
@@ -124,8 +129,8 @@ const About = () => {
               </Card>
             </Col>
             <Col md={3}>
-            <Card className='text-center mt-1 mb-5' style={{ width: '17rem' }}>
-              <Card.Img variant="top" src="imgs/about/profile_pic.png" alt="Book Shop Team" className='img-fluid m-auto' />
+              <Card className='text-center mt-1 mb-5' style={{ width: '17rem' }}>
+                <Card.Img variant="top" src="imgs/about/profile_pic.png" alt="Book Shop Team" className='img-fluid m-auto' />
                 <Card.Body>
                   <Card.Title>Kevin Gonzalez</Card.Title>
                   <Card.Text>
