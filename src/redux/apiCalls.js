@@ -51,14 +51,13 @@ export const login = async (dispatch, user) => {
 export const register = (username, email, password) => async (dispatch) => {
   dispatch(registerStart())
   try {
-    const data = await publicRequest.post(
+    const res = await publicRequest.post(
       '/auth/register',
-      { 'username': username, 'email': email, 'password': password },
-      dispatch(registerSuccess(data))
-    )
+      { 'username': username, 'email': email, 'password': password })
+      dispatch(registerSuccess(res.data), loginSuccess(res.data), res.data.save())
 
-    localStorage.setItem('user', JSON.stringify(data))
-
+    localStorage.setItem('user', JSON.stringify(res.data))
+    console.log(res.data)
   } catch (error) {
     dispatch(registerFailure())
   }

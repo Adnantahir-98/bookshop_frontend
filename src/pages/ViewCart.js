@@ -45,7 +45,7 @@ const ViewCart = ({ _id }) => {
             } catch { }
         };
         stripeToken && makeRequest();
-    }, [stripeToken, cart.total, history]);
+    }, [stripeToken, cart, cart.total, history]);
 
     return (
         <>

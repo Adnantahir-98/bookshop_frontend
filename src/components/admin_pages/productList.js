@@ -66,6 +66,7 @@ const ProductList = () => {
   return (
     <div className="productList my-5">
       <Container>
+      <h1 className="productTitle">Products List ({products.length})</h1>
         <DataGrid
           style={{ height: "85vh" }}
           rows={products}
