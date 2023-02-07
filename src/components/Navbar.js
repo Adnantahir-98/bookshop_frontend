@@ -1,9 +1,9 @@
 
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux"
 import {logoutSuccess} from '../redux/userSlice'
 
-// import SearchBox from './SearchBox'
+import SearchBox from './SearchBox'
 import { Navbar, NavDropdown, Nav, Container, Row, Col } from 'react-bootstrap'
 import { AiOutlineShoppingCart, AiOutlineSearch } from 'react-icons/ai'
 import { BsEnvelopeFill } from 'react-icons/bs'
@@ -18,6 +18,8 @@ import './style.css'
 const NavbarMenu = () => {
 
     // const [navbar, setNavbar] = useState(false)
+    const location = useLocation()
+    const cat = location.pathname.split("/")[2]
 
     const quantity = useSelector(state => state.cart.quantity)
     const { currentUser } = useSelector((state) => state.user);
@@ -83,10 +85,11 @@ const NavbarMenu = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Fade top>
                             <div className='col-sm-6 col-md-6 col-lg-6'>
-                                <form className="d-flex ms-4 me-auto" id="main-search">
+                                <SearchBox />
+                                {/* <form className="d-flex ms-4 me-auto" id="main-search">
                                     <input className="form-control border-end-0" type="search" placeholder="Search..." aria-label="Search" style={{ borderTopRightRadius: "0%", borderBottomRightRadius: "0%" }} />
                                     <button className="btn btn-danger border-left-0" type="submit" style={{ borderTopLeftRadius: "0%", borderBottomLeftRadius: "0%", }}><AiOutlineSearch /></button>
-                                </form>
+                                </form> */}
                             </div>
                         </Fade>
                         <Nav className="ms-auto">

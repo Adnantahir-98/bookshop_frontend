@@ -10,9 +10,9 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import ViewCart from './pages/ViewCart'
 import Register from './pages/Register'
+import ShopCategory from './pages/ShopCategory'
 import ProductDetails from './pages/ProductDetails'
 import OrderSuccess from './components/Order_Completed'
-
 import Loader from './components/Loading'
 import FAQ from './components/Footer_Pages/Faqs'
 import PrivacyPolicy from './components/Footer_Pages/Privacy_Policy'
@@ -61,14 +61,15 @@ const App = () => {
           <Navbar />
           <Routes>
             <Route path="/" exact element={<Home />} />
-            
-            <Route path="/shop" element={<Shop />} />
+
+            {/* <Route path="/shop" element={<Shop />} /> */}
             <Route path="/login" element={<Login />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/register" element={<Register />} />
             <Route path="/viewcart" element={<ViewCart />} />
             <Route path="/success" element={<OrderSuccess />} />
+            <Route path="/shop/" element={<ShopCategory />} />
             <Route path="/product/:id" element={<ProductDetails />} />
 
             <Route path="/orderslist/" element={<OrderList />} />

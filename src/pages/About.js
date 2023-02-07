@@ -95,6 +95,7 @@ const About = () => {
 
         <section>
           <Row className='m-auto pb-3'>
+            <h1 className='text-center m-auto py-3'>Our Team</h1>
             <Col md={3}>
               <Card className='text-center my-1' style={{ width: '17rem' }}>
                 <Card.Img variant="top" src="imgs/about/usman_majeed.png" alt="Book Shop Team" className='img-fluid py-5 m-auto' />

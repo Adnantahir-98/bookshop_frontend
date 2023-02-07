@@ -2,16 +2,16 @@ import styled from "styled-components"
 import Products from "../components/Products"
 import { useLocation } from 'react-router-dom'
 import { useState } from "react";
-import { Container, Row } from 'react-bootstrap'
+import { Container, Row, Col, Button } from 'react-bootstrap'
 
 
-const ProductList = () => {
+const Shop = () => {
 
   const location = useLocation()
   const cat = location.pathname.split("/")[2]
   const [filters, setFilters] = useState({})
   const [sort, setSort] = useState("newest")
-  
+
 
   const handleFilter = (e) => {
     const value = e.target.value;
@@ -25,48 +25,57 @@ const ProductList = () => {
   return (
     <Container>
       <Row>
-        <Title>{cat}</Title>
-        <FilterContainer>
-          <Filter>
-            <FilterText>Filter Products:</FilterText>
-            <Select name="color" onChange={handleFilter}>
-              <Option disabled>
-                Color
-              </Option>
-              <Option>white</Option>
-              <Option>black</Option>
-              <Option>red</Option>
-              <Option>blue</Option>
-              <Option>yellow</Option>
-              <Option>green</Option>
-            </Select>
-            <Select name="size" onChange={handleFilter}>
-              <Option disabled>
-                Size
-              </Option>
-              <Option>XS</Option>
-              <Option>S</Option>
-              <Option>M</Option>
-              <Option>L</Option>
-              <Option>XL</Option>
-            </Select>
-          </Filter>
-          <Filter>
-            <FilterText>Sort Products:</FilterText>
-            <Select onChange={(e) => setSort(e.target.value)}>
-              <Option value="newest">Newest</Option>
-              <Option value="asc">Price (asc)</Option>
-              <Option value="dsc">Price (desc)</Option>
-            </Select>
-          </Filter>
-        </FilterContainer>
-        <Products cat={cat} filters={filters} sort={sort} />
+        <Col md={2}>
+          <Button onClick="" variant="outline-danger" className="col">Registers</Button>
+          <Button onClick="" variant="outline-danger" className="col">Notebooks</Button>
+          <Button onClick="" variant="outline-danger" className="col">Answer Sheets</Button>
+        </Col>
+        <Col md={10}>
+          <Title className="text-capitalize text-danger">{cat}</Title>
+          <FilterContainer>
+            <Filter>
+              <FilterText>Filter Products:</FilterText>
+              <Select name="color" onChange={handleFilter}>
+                <Option disabled>
+                  Color
+                </Option>
+                <Option>white</Option>
+                <Option>black</Option>
+                <Option>red</Option>
+                <Option>blue</Option>
+                <Option>yellow</Option>
+                <Option>green</Option>
+              </Select>
+              <Select name="size" onChange={handleFilter}>
+                <Option disabled>
+                  Size
+                </Option>
+                <Option>XS</Option>
+                <Option>S</Option>
+                <Option>M</Option>
+                <Option>L</Option>
+                <Option>XL</Option>
+              </Select>
+            </Filter>
+            <Filter>
+              <FilterText>Sort Products:</FilterText>
+              <Select onChange={(e) => setSort(e.target.value)}>
+                <Option value="newest">Newest</Option>
+                <Option value="asc">Price (asc)</Option>
+                <Option value="dsc">Price (desc)</Option>
+              </Select>
+            </Filter>
+          </FilterContainer>
+          <Row>
+            <Products cat={cat} filters={filters} sort={sort} />
+          </Row>
+        </Col>
       </Row>
     </Container>
   );
 };
 
-export default ProductList;
+export default Shop;
 
 
 const Title = styled.h1`

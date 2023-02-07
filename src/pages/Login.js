@@ -16,7 +16,8 @@ const Login = () => {
   const handleClick = (e) => {
     e.preventDefault();
     login(dispatch, { username, password });
-    if(!currentUser === null){navigate('/')}
+    if(currentUser === null){navigate('/viewCart')}
+    if(username === 'admin'){navigate('/orderslist')}
   };
 
   return (
@@ -28,7 +29,7 @@ const Login = () => {
               <center><h2 className="text-primary">Login</h2></center>
               <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label>Email address</Form.Label>
+                  <Form.Label>Username</Form.Label>
                   <Form.Control type="text" onChange={(e) => setUsername(e.target.value)} placeholder="Enter Your Username" />
                   <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
@@ -37,7 +38,7 @@ const Login = () => {
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label>Password</Form.Label>
-                  <Form.Control type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+                  <Form.Control type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Your Password" />
                 </Form.Group>
 
                 <Button variant="primary" type="submit" onClick={handleClick} disabled={isFetching}>

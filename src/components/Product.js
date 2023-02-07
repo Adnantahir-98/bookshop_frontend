@@ -23,7 +23,7 @@ const Product = ({ item }) => {
                                 <Card.Title>{item.title}</Card.Title>
                             </Link>
                             <Card.Text className='text-truncate text-muted'>{item.desc}</Card.Text>
-                            <h5 className="me-auto">Price: $<span className='fw-bold'>{item.price}</span> </h5>
+                            <h5 className="me-auto">Price: Rs. <span className='fw-bold'>{item.price}</span> </h5>
                             <Link to={`/product/${item._id}`} className="text-dark text-decoration-none">
                                 <Button variant="outline-danger" outline>
                                     Add to Cart

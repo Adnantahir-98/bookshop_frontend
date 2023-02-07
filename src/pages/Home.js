@@ -23,14 +23,14 @@ import './style.css'
 
 
 
-const Home = ({ cat, filters, sort }) => {
+const Home = ({ cat, filters, sort, data }) => {
 
   const [products, setProducts] = useState([])
   const [filteredProducts, setFilteredProducts] = useState([])
   const [instaReel, setInstaReel] = useState(9)
   const [show, setShow] = useState(3)
 
-  const loadMore = () => {
+  const loadMoreProducts = () => {
     setShow((prevValue) => prevValue + 3)
   }
   const HandleInstaReal = () => {
@@ -46,9 +46,8 @@ const Home = ({ cat, filters, sort }) => {
             : "http://localhost:5000/api/products"
         );
         setProducts(res.data);
-      } catch (err) {
-
-      }
+                
+      } catch (err) { }
     }
     getProducts()
   }, [cat])
@@ -79,15 +78,6 @@ const Home = ({ cat, filters, sort }) => {
     }
   }, [sort]);
 
-
-  // const { text } = useTypewriter({
-  //   words: [' Creativity', ' Strengths', ' Imaginations', ' Potential'],
-  //   loop: 19,
-  //   delaySpeed: 1000,
-  //   typeSpeed: 70,
-  //   deleteSpeed: 50,
-  //   onLoopDone: () => console.log(`TypeWriter loops.`),
-  // })
 
   // Masonry instagram Image Gallery
   const Label = styled(Paper)(({ theme }) => ({
@@ -213,7 +203,7 @@ const Home = ({ cat, filters, sort }) => {
                 with an overwelmingly customer support from our team. The perfect book shop awaits for you.
               </p>
               {cat
-                ? filteredProducts
+                ? data && filteredProducts
                   .slice(0, show)
                   .map((item) => <Product item={item} show={show} setShow={setShow} key={item._id} />)
                 : products
@@ -222,7 +212,7 @@ const Home = ({ cat, filters, sort }) => {
             </Row>
           </Fade>
 
-          <button className="btn btn-outline-danger d-block m-auto" onClick={loadMore}>
+          <button className="btn btn-outline-danger d-block m-auto" onClick={loadMoreProducts}>
             See More
             <AiOutlineArrowDown className="mx-2" />
           </button>
@@ -249,7 +239,7 @@ const Home = ({ cat, filters, sort }) => {
         <Container className='my-4'>
           <h1 style={{ fontFamily: 'Open Sans' }} className='display-5 mt-5 mb-3 text-center'>
             <a href="https://www.instagram.com/bookshopcompk/" target="_blank" className="text-decoration-none text-dark">
-              #Indusbookshop
+              #Stationeryshop
             </a>
           </h1>
           <Row>
@@ -283,6 +273,35 @@ const Home = ({ cat, filters, sort }) => {
               Load More
               <BiDownArrowAlt className="ml-1" />
             </button>
+          </Row>
+        </Container>
+      </section>
+
+
+      <section>
+        <Container fluid className="bg-danger my-5 text-center text-white">
+          <h1 className="text-white text-center p-5">3 reason to go with bookshop</h1>
+          <Row className="pb-5 m-auto">
+            <Col md={{ span: 3, offset: 1 }}>
+              <h3>Boot customer loyalty</h3>
+              <h6>Deliver highly relevant experiences to make sure your
+                customer come back again and again.
+              </h6>
+            </Col>
+            <Col md={{ span: 3, offset: 1 }}>
+              <h3>Grow your market</h3>
+              <h6>
+                create personalized paper products like registers and notebooks
+                that speaks themselves at the exact moment.
+              </h6>
+            </Col>
+            <Col md={{ span: 3, offset: 1 }}>
+              <h3>Build campaigns</h3>
+              <h6>
+                Pick and choose among pre-set promotions to increase sales
+                and customer satisfaction.
+              </h6>
+            </Col>
           </Row>
         </Container>
       </section>
