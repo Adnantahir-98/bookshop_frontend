@@ -59,7 +59,7 @@ export const productSlice = createSlice({
     },
     addProductSuccess: (state, action) => {
       state.isFetching = false;
-      state.products.push(action.payload);
+      state.push(action.payload);
     },
     addProductFailure: (state) => {
       state.isFetching = false;
