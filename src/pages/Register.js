@@ -24,7 +24,7 @@ const RegisterNewUser = () => {
         e.preventDefault()
         setValues({
             username: '',
-            email: '',
+            email: '', 
             password: '',
         })
         dispatch(register({

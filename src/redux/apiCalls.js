@@ -100,8 +100,10 @@ export const addProduct = async (product, dispatch) => {
   try {
     const res = await userRequest.post(`/products`, product);
     dispatch(addProductSuccess(res.data));
+    console.log(res.data)
   } catch (err) {
     dispatch(addProductFailure());
+    console.log(err)
   }
 };
 
