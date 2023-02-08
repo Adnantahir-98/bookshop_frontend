@@ -28,7 +28,7 @@ const Home = ({ cat, filters, sort, data }) => {
   const [products, setProducts] = useState([])
   const [filteredProducts, setFilteredProducts] = useState([])
   const [instaReel, setInstaReel] = useState(9)
-  const [show, setShow] = useState(3)
+  const [show, setShow] = useState(13)
 
   const loadMoreProducts = () => {
     setShow((prevValue) => prevValue + 3)
